@@ -11,7 +11,7 @@ var Cat = mongoose.model('Cat', {name:String});
 
 router.get("/", function(req, res, next){
     var file = req.params[0] || 'views/index.html';
-    res.sendFile(path.join(_dirname,'../public', file));
+    res.sendFile(path.join(__dirname,'../public', file));
     //next();
 });
 
