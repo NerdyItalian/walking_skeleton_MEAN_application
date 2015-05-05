@@ -1,11 +1,11 @@
-var express = require(‘express’);
+var express = require('express');
 var app = express();
 
-app.get(“/”, function(req, res) {
-    res.send(“Hello!”);
-});
+var index = require('../routes/index');
 
-var server = app.listen(3000, function() {
+app.use("/", index);
+
+var server = app.listen(3000, function(){
     var port = server.address().port;
-    console.log(“Listening on port: “, port);
+    console.log("Listening on port:", port);
 });
